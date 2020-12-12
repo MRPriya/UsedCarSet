@@ -77,6 +77,7 @@ CREATE EXTERNAL TABLE IF NOT EXISTS car_rating (
 make_name string, model_name string,year int, seller_rating string)
 ROW FORMAT DELIMITED FIELDS TERMINATED BY ','
 STORED AS TEXTFILE LOCATION '/user/hparekh2/GP2TermProject/tables/car_rating/';
+
 INSERT OVERWRITE TABLE car_rating
 Select make_name, model_name, year, AVG(seller_rating)
 FROM cargurus_usedcars
